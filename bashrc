@@ -154,6 +154,74 @@ PS1="\[\033[0;34m\][\u@\h:\w]$\[\033[0m\]"
 ## -- 2) Set up aliases --
 ## -----------------------
 
+
+# 2.0) From Alias.sh
+
+#Extract most know archives with one command
+extract () {
+    if [ -f $1 ] ; then
+      case $1 in
+        *.tar.bz2)   tar xjf $1     ;;
+        *.tar.gz)    tar xzf $1     ;;
+        *.bz2)       bunzip2 $1     ;;
+        *.rar)       unrar e $1     ;;
+        *.gz)        gunzip $1      ;;
+        *.tar)       tar xf $1      ;;
+        *.tbz2)      tar xjf $1     ;;
+        *.tgz)       tar xzf $1     ;;
+        *.zip)       unzip $1       ;;
+        *.Z)         uncompress $1  ;;
+        *.7z)        7z x $1        ;;
+        *)     echo "'$1' cannot be extracted via extract()" ;;
+         esac
+     else
+         echo "'$1' is not a valid file"
+     fi
+}
+
+#J ump back n directories at a time
+alias ..='cd ..'
+alias ...='cd ../../'
+alias ....='cd ../../../'
+alias .....='cd ../../../../'
+alias ......='cd ../../../../../'
+
+# Compact, colorized git log
+alias gl="git log --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
+
+# Visualise git log (like gitk, in the terminal)
+alias lg='git log --graph --full-history --all --color --pretty=format:"%x1b[31m%h%x09%x1b[32m%d%x1b[0m%x20%s"'
+
+# Show which commands you use the most
+alias freq='cut -f1 -d" " ~/.bash_history | sort | uniq -c | sort -nr | head -n 30'
+
+# Search for process
+alias tm='ps -ef | grep'
+
+# List all folders
+alias lf='ls -Gl | grep ^d' #Only list directories
+alias lsd='ls -Gal | grep ^d' #Only list directories, including hidden ones
+
+# Clear the terminal of it's output
+alias c='clear'
+
+# Show hidden files only
+alias l.='ls -d .* --color=auto'
+
+# Copy public key to remote machine (dependency-less)
+function authme() {
+  ssh "$1" 'mkdir -p ~/.ssh && cat >> ~/.ssh/authorized_keys' \
+    < ~/.ssh/id_dsa.pub
+}
+
+# What's gobbling the memory?
+alias wotgobblemem='ps -o time,ppid,pid,nice,pcpu,pmem,user,comm -A | sort -n -k 6 | tail -15'
+
+# Search Wikipedia
+function wikipedia() {
+    if [ "${1}" ]; then dig + short +TXT "${1}".wp.dg.cx; fi
+}
+
 # 2.1) Safety
 alias rm="rm -i"
 alias mv="mv -i"
@@ -202,6 +270,7 @@ if [ -s ~/.nvm/nvm.sh ]; then
     source ~/.nvm/nvm.sh
     nvm use v0.10.12 &> /dev/null # silence nvm use; needed for rsync
 fi
+
 
 ## ------------------------------
 ## -- 3) User-customized code  --
