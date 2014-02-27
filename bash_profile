@@ -38,8 +38,8 @@
 # Factor out all repeated profile initialization into .bashrc
 #  - All non-login shell parameters go there
 #  - All declarations repeated for each screen session go there
-if [ -f ~/.bashrc ]; then
-   source ~/.bashrc
+if [ -f ~/.bash_rc ]; then
+   source ~/.bash_rc
 fi
 
 # Configure PATH
