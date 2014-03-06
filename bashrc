@@ -179,7 +179,7 @@ extract () {
      fi
 }
 
-#J ump back n directories at a time
+#Jump back n directories at a time
 alias ..='cd ..'
 alias ...='cd ../../'
 alias ....='cd ../../../'
