@@ -276,5 +276,9 @@ export LC_ALL=POSIX
 ## -- 3) User-customized code  --
 ## ------------------------------
 
+
+# Automatic tab naming for iTerm tabs
+export PROMPT_COMMAND='echo -ne "\033]0;${USER}@${HOSTNAME%%.*}\007"'
+
 ## Define any user-specific variables you want here.
 source ~/.bashrc_custom
