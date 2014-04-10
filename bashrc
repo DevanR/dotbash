@@ -186,12 +186,6 @@ alias ....='cd ../../../'
 alias .....='cd ../../../../'
 alias ......='cd ../../../../../'
 
-# Compact, colorized git log
-alias gl="git log --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
-
-# Visualise git log (like gitk, in the terminal)
-alias lg='git log --graph --full-history --all --color --pretty=format:"%x1b[31m%h%x09%x1b[32m%d%x1b[0m%x20%s"'
-
 # Show which commands you use the most
 alias freq='cut -f1 -d" " ~/.bash_history | sort | uniq -c | sort -nr | head -n 30'
 
@@ -232,6 +226,7 @@ set -o noclobber
 alias ll="ls -alrtF --color"
 alias la="ls -A"
 alias l="ls -CF"
+alias lld="ls -ld */"
 alias dir='ls --color=auto --format=vertical'
 alias vdir='ls --color=auto --format=long'
 alias m='less'
@@ -255,6 +250,27 @@ export GREP_COLOR='1;31' # green for matches
 # http://www.gnu.org/software/coreutils/faq/coreutils-faq.html#Sort-does-not-sort-in-normal-order_0021
 unset LANG
 export LC_ALL=POSIX
+
+# 2.6) Git options
+alias ga='git add'
+alias gp='git push'
+alias gs='git status'
+alias gd='git diff'
+alias gdc='git diff --cached'
+alias gc='git commit -m'
+alias gca='git commit -am'
+alias gb='git branch'
+alias gc='git checkout'
+alias gra='git remote add'
+alias grr='git remote rm'
+alias gp='git pull'
+alias gcl='git clone'
+
+# Compact, colorized git log
+alias gl="git log --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
+
+# Visualise git log (like gitk, in the terminal)
+alias lg='git log --graph --full-history --all --color --pretty=format:"%x1b[31m%h%x09%x1b[32m%d%x1b[0m%x20%s"'
 
 # 2.6) Install rlwrap if not present
 # http://stackoverflow.com/a/677212
