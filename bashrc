@@ -71,9 +71,11 @@ if [ "$PS1" ]; then
     if [ -x /usr/bin/tput ]; then
       if [ "x`tput kbs`" != "x" ]; then # We can't do this with "dumb" terminal
         stty erase `tput kbs`
+        stty erase ^?
       elif [ -x /usr/bin/wc ]; then
         if [ "`tput kbs|wc -c `" -gt 0 ]; then # We can't do this with "dumb" terminal
           stty erase `tput kbs`
+          stty erase ^?
         fi
       fi
     fi
@@ -286,7 +288,6 @@ alias lg='git log --graph --full-history --all --color --pretty=format:"%x1b[31m
 #    source ~/.nvm/nvm.sh
 #    nvm use v0.10.12 &> /dev/null # silence nvm use; needed for rsync
 #fi
-
 
 ## ------------------------------
 ## -- 3) User-customized code  --
