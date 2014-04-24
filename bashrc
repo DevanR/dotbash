@@ -262,17 +262,17 @@ alias gdc='git diff --cached'
 alias gc='git commit -m'
 alias gca='git commit -am'
 alias gb='git branch'
-alias gc='git checkout'
+alias gch='git checkout'
 alias gra='git remote add'
 alias grr='git remote rm'
-alias gp='git pull'
+alias gpl='git pull'
 alias gcl='git clone'
 
 # Compact, colorized git log
 alias gl="git log --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
 
 # Visualise git log (like gitk, in the terminal)
-alias lg='git log --graph --full-history --all --color --pretty=format:"%x1b[31m%h%x09%x1b[32m%d%x1b[0m%x20%s"'
+alias gg='git log --graph --full-history --all --color --pretty=format:"%x1b[31m%h%x09%x1b[32m%d%x1b[0m%x20%s"'
 
 # 2.6) Install rlwrap if not present
 # http://stackoverflow.com/a/677212
