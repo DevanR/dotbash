@@ -53,3 +53,12 @@ export PATH=/usr/local/sbin:$PATH
 export PATH=/opt/local/bin:/opt/local/sbin:/usr/bin:$PATH
 export PATH=/usr/local/mysql/bin:$PATH
 #export PATH=/usr/local/heroku/bin:$PATH # Heroku: https://toolbelt.heroku.com/standalone
+
+alias ll="ls -alrtF"
+export CLICOLOR=1
+export LSCOLORS=gxBxhxDxfxhxhxhxhxcxcx
+export GREP_OPTIONS='--color=auto'
+
+export WORKON_HOME=$HOME/.virtualenvs
+export PROJECT_HOME=$HOME/Workspace
+source /usr/local/bin/virtualenvwrapper.sh
