@@ -59,6 +59,3 @@ export CLICOLOR=1
 export LSCOLORS=gxBxhxDxfxhxhxhxhxcxcx
 export GREP_OPTIONS='--color=auto'
 
-export WORKON_HOME=$HOME/.virtualenvs
-export PROJECT_HOME=$HOME/Workspace
-source /usr/local/bin/virtualenvwrapper.sh
