@@ -218,6 +218,11 @@ function wikipedia() {
     if [ "${1}" ]; then dig + short +TXT "${1}".wp.dg.cx; fi
 }
 
+# Pretty print json
+function ppjson () {
+    if [ "${1}" ]; then cat "${1}" | python -mjson.tool; fi   
+}
+
 # 2.1) Safety
 alias rm="rm -i"
 alias mv="mv -i"
