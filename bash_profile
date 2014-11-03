@@ -52,10 +52,25 @@ export PATH=/usr/local/bin:$PATH
 export PATH=/usr/local/sbin:$PATH
 export PATH=/opt/local/bin:/opt/local/sbin:/usr/bin:$PATH
 export PATH=/usr/local/mysql/bin:$PATH
+export PATH=/opt/local/lib/postgresql94/bin/:$PATH
+export PATH=/opt/local/Library/Frameworks/Python.framework/Versions/3.4/lib/python3.4/site-packages/django/bin:$PATH
 #export PATH=/usr/local/heroku/bin:$PATH # Heroku: https://toolbelt.heroku.com/standalone
 
 alias ll="ls -alrtF"
 export CLICOLOR=1
 export LSCOLORS=gxBxhxDxfxhxhxhxhxcxcx
 export GREP_OPTIONS='--color=auto'
+
+if [ -f /opt/local/etc/bash_completion ]; then
+    . /opt/local/etc/bash_completion
+fi
+
+
+##
+# Your previous /Users/dre09/.profile file was backed up as /Users/dre09/.profile.macports-saved_2014-10-17_at_20:08:10
+##
+
+# MacPorts Installer addition on 2014-10-17_at_20:08:10: adding an appropriate PATH variable for use with MacPorts.
+export PATH="/opt/local/bin:/opt/local/sbin:$PATH"
+# Finished adapting your PATH environment variable for use with MacPorts.
 
