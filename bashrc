@@ -283,6 +283,9 @@ alias gg='git log --graph --full-history --all --color --pretty=format:"%x1b[31m
 ## -- 3) User-customized code  --
 ## ------------------------------
 
+# Set vi mode as default
+set -o vi
+
 # Automatic tab naming for iTerm tabs
 export PROMPT_COMMAND='echo -ne "\033]0;${USER}@${HOSTNAME%%.*}\007"'
 
