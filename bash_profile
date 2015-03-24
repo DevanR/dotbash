@@ -52,7 +52,7 @@ export PATH=/usr/local/bin:$PATH
 export PATH=/usr/local/sbin:$PATH
 export PATH=/opt/local/bin:/opt/local/sbin:/usr/bin:$PATH
 export PATH=/usr/local/mysql/bin:$PATH
-export PATH=/opt/local/lib/postgresql94/bin/:$PATH
+export PATH=/opt/local/lib/postgresql94/bin:$PATH
 export PATH=/opt/local/Library/Frameworks/Python.framework/Versions/3.4/lib/python3.4/site-packages/django/bin:$PATH
 #export PATH=/usr/local/heroku/bin:$PATH # Heroku: https://toolbelt.heroku.com/standalone
 
