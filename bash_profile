@@ -70,7 +70,3 @@ fi
 # Your previous /Users/dre09/.profile file was backed up as /Users/dre09/.profile.macports-saved_2014-10-17_at_20:08:10
 ##
 
-# MacPorts Installer addition on 2014-10-17_at_20:08:10: adding an appropriate PATH variable for use with MacPorts.
-export PATH="/opt/local/bin:/opt/local/sbin:$PATH"
-# Finished adapting your PATH environment variable for use with MacPorts.
-
