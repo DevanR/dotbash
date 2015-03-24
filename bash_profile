@@ -45,16 +45,13 @@ fi
 # Configure PATH
 #  - These are line by line so that you can kill one without affecting the others.
 #  - Lowest priority first, highest priority last.
-export PATH=$PATH
-export PATH=$HOME/bin:$PATH
-export PATH=/usr/bin:$PATH
-export PATH=/usr/local/bin:$PATH
-export PATH=/usr/local/sbin:$PATH
-export PATH=/opt/local/bin:/opt/local/sbin:/usr/bin:$PATH
-export PATH=/usr/local/mysql/bin:$PATH
-export PATH=/opt/local/lib/postgresql94/bin:$PATH
-export PATH=/opt/local/Library/Frameworks/Python.framework/Versions/3.4/lib/python3.4/site-packages/django/bin:$PATH
-#export PATH=/usr/local/heroku/bin:$PATH # Heroku: https://toolbelt.heroku.com/standalone
+#export PATH=$PATH
+#export PATH=/usr/local/bin:$PATH
+#export PATH=$HOME/bin:$PATH
+#export PATH=/usr/local/sbin:$PATH
+#export PATH=/usr/bin:$PATH
+#export PATH=/usr/local/mysql/bin:$PATH
+#export PATH=/opt/local/lib/postgresql94/bin:$PATH
 
 alias ll="ls -alrtF"
 export CLICOLOR=1
