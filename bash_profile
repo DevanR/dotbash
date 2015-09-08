@@ -45,13 +45,15 @@ fi
 # Configure PATH
 #  - These are line by line so that you can kill one without affecting the others.
 #  - Lowest priority first, highest priority last.
-#export PATH=$PATH
-#export PATH=/usr/local/bin:$PATH
+export PATH=$PATH
+export PATH=/usr/local/bin:$PATH
 #export PATH=$HOME/bin:$PATH
 #export PATH=/usr/local/sbin:$PATH
 #export PATH=/usr/bin:$PATH
 #export PATH=/usr/local/mysql/bin:$PATH
 #export PATH=/opt/local/lib/postgresql94/bin:$PATH
+
+export PYENV_ROOT=/usr/local/var/pyenv 
 
 alias ll="ls -alrtF"
 export CLICOLOR=1
@@ -61,9 +63,5 @@ export GREP_OPTIONS='--color=auto'
 if [ -f /opt/local/etc/bash_completion ]; then
     . /opt/local/etc/bash_completion
 fi
-
-
-##
-# Your previous /Users/dre09/.profile file was backed up as /Users/dre09/.profile.macports-saved_2014-10-17_at_20:08:10
-##
-
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
