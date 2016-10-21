@@ -156,7 +156,6 @@ PS1="\[\033[0;34m\][\u@\h:\w]$\[\033[0m\]"
 ## -- 2) Set up aliases --
 ## -----------------------
 
-
 # 2.0) From Alias.sh
 
 #Extract most know archives with one command
@@ -297,3 +296,25 @@ alias matrix='LC_ALL=C tr -c "[:digit:]" " " < /dev/urandom | dd cbs=$COLUMNS co
 
 # Javascript development on MAC
 alias jsc='/System/Library/Frameworks/JavaScriptCore.framework/Versions/Current/Resources/jsc'
+
+export WORKON_HOME=~/virtualenvs
+
+source /usr/local/bin/virtualenvwrapper.sh
+
+# HomeBrew bash completion
+if [ -f $(brew --prefix)/etc/bash_completion ]; then
+. $(brew --prefix)/etc/bash_completion
+fi
+
+# Dump local BMS metro DB
+alias update_metro='pg_dump -h 10.246.40.105 -U bmsadmin -C metro | psql -h localhost -d metro -U bmsadmin'
+
+# Log on to bmsprod
+alias bmsprod='psql -h 10.246.40.105 -U bmsadmin -d metro'
+
+alias bmsqa='psql -h cpbmsqa01.sns.sky.com -U bmsadmin -d metro'
+
+alias bmsdev='psql -h localhost -U bmsadmin -d metro'
+
+# Brew Update and Upgrade
+alias brewup='brew update && brew upgrade'
