@@ -318,3 +318,5 @@ alias bmsdev='psql -h localhost -U bmsadmin -d metro'
 
 # Brew Update and Upgrade
 alias brewup='brew update && brew upgrade'
+
+alias openconnect='sudo openconnect --user=bskyb_devan.rehunathan https://sslvpn.isp.sky.com'
