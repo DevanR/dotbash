@@ -317,6 +317,9 @@ alias bmsqa='psql -h cpbmsqa01.sns.sky.com -U bmsadmin -d metro'
 alias bmsdev='psql -h localhost -U bmsadmin -d metro'
 
 # Brew Update and Upgrade
-alias brewup='brew update && brew upgrade'
+alias brewup='brew update && brew outdated --verbose && brew upgrade && brew cleanup -ns && brew cleanup -s'
 
 alias openconnect='sudo openconnect --user=bskyb_devan.rehunathan https://sslvpn.isp.sky.com'
+
+# Add timestamps to history
+export HISTTIMEFORMAT="%d/%m/%y %T "
