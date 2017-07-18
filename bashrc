@@ -209,11 +209,6 @@ function authme() {
 # What's gobbling the memory?
 alias wotgobblemem='ps -o time,ppid,pid,nice,pcpu,pmem,user,comm -A | sort -n -k 6 | tail -15'
 
-# Search Wikipedia
-function wikipedia() {
-    if [ "${1}" ]; then dig + short +TXT "${1}".wp.dg.cx; fi
-}
-
 # Pretty print json
 function ppjson () {
     if [ "${1}" ]; then cat "${1}" | python -mjson.tool; fi   
@@ -285,9 +280,6 @@ set -o vi
 # Automatic tab naming for iTerm tabs
 export PROMPT_COMMAND='echo -ne "\033]0;${USER}@${HOSTNAME%%.*}\007"'
 
-## Define any user-specific variables you want here.
-source ~/.bashrc_custom
-
 # Matrix Terminal
 alias matrix='LC_ALL=C tr -c "[:digit:]" " " < /dev/urandom | dd cbs=$COLUMNS conv=unblock | GREP_COLOR="1;32" grep --color "[^ ]"'
 
@@ -325,3 +317,13 @@ alias openconnect='sudo openconnect --user=bskyb_devan.rehunathan https://sslvpn
 
 # Add timestamps to history
 export HISTTIMEFORMAT="%d/%m/%y %T "
+
+# Create test-commands fifo
+function letstest() {
+    if [ ! -p test-commands ]; then
+        mkfifo test-commands
+    fi   
+    while true; do
+        sh -c "$(cat test-commands)"
+    done
+}

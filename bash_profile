@@ -69,3 +69,11 @@ eval "$(pyenv virtualenv-init -)"
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+
+# GDAL
+export PATH=/Library/Frameworks/UnixImageIO.framework/Programs:$PATH
+export PATH=/Library/Frameworks/PROJ.framework/Programs:$PATH
+export PATH=/Library/Frameworks/GEOS.framework/Programs:$PATH
+export PATH=/Library/Frameworks/SQLite3.framework/Programs:$PATH
+export PATH=/Library/Frameworks/GDAL.framework/Programs:$PATH
+export PATH=/usr/local/pgsql/bin:$PATH
