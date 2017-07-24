@@ -263,6 +263,7 @@ alias gra='git remote add'
 alias grr='git remote rm'
 alias gpl='git pull'
 alias gcl='git clone'
+alias git recap='git log --all --oneline --no-merges --author=devan.rehunathan@sky.uk'
 
 # Compact, colorized git log
 alias gl="git log --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
@@ -286,10 +287,6 @@ alias matrix='LC_ALL=C tr -c "[:digit:]" " " < /dev/urandom | dd cbs=$COLUMNS co
 # Javascript development on MAC
 alias jsc='/System/Library/Frameworks/JavaScriptCore.framework/Versions/Current/Resources/jsc'
 
-# virtualenvwrapper
-export WORKON_HOME=~/.virtualenvs
-source /usr/local/bin/virtualenvwrapper.sh
-
 # HomeBrew bash completion
 if [ -f $(brew --prefix)/etc/bash_completion ]; then
 . $(brew --prefix)/etc/bash_completion
@@ -306,6 +303,9 @@ alias coreqa='pgcli -h  iapqa01.sns.sky.com -U core_user -d core'
 alias hubprod='pgcli -h insightandplanning.sns.sky.com -U hub -d hub'
 
 alias hubqa='pgcli -h insightandplanning-qa.sns.sky.com -U hub_qa -d hub_qa'
+
+# tmux prompt bug fix
+alias tmux='tmux -u'
 
 # Jupyter Notebook
 alias notes='jupyter notebook'
@@ -327,3 +327,9 @@ function letstest() {
         sh -c "$(cat test-commands)"
     done
 }
+
+# Virtualenv wrapper
+export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python3
+export WORKON_HOME=~/Envs
+VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python3
+

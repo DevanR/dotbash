@@ -53,8 +53,6 @@ export PATH=/usr/local/bin:$PATH
 #export PATH=/usr/local/mysql/bin:$PATH
 #export PATH=/opt/local/lib/postgresql94/bin:$PATH
 
-export PYENV_ROOT=/usr/local/var/pyenv 
-
 alias ll="ls -alrtF"
 export CLICOLOR=1
 export LSCOLORS=gxBxhxDxfxhxhxhxhxcxcx
@@ -63,8 +61,6 @@ export GREP_OPTIONS='--color=auto'
 if [ -f /opt/local/etc/bash_completion ]; then
     . /opt/local/etc/bash_completion
 fi
-eval "$(pyenv init -)"
-eval "$(pyenv virtualenv-init -)"
 
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 
