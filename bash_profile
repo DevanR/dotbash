@@ -8,6 +8,9 @@
 if [ -f ~/.bash_rc ]; then
    source ~/.bash_rc
 fi
+if [ -f ~/.bashrc ]; then
+   source ~/.bashrc
+fi
 
 # Configure PATH
 #  - These are line by line so that you can kill one without affecting the others.
@@ -19,4 +22,6 @@ if [ -f /opt/local/etc/bash_completion ]; then
     . /opt/local/etc/bash_completion
 fi
 
-[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+export LANG=en_GB.UTF-8
+export LC_ALL=en_GB.UTF-8
+export TERM=xterm-256color

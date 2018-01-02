@@ -98,7 +98,7 @@ set -o noclobber
 export CLICOLOR=1
 export LSCOLORS=gxBxhxDxfxhxhxhxhxcxcx
 export GREP_OPTIONS='--color=auto'
-alias ll="ls -alrtF --color"
+alias ll="ls -alrtF"
 alias la="ls -A"
 alias l="ls -CF"
 alias lld="ls -ld */"
@@ -127,20 +127,7 @@ unset LANG
 export LC_ALL=POSIX
 
 # 2.6) Git options
-alias ga='git add'
-alias gp='git push'
-alias gs='git status'
-alias gd='git diff'
-alias gdc='git diff --cached'
-alias gc='git commit -m'
-alias gca='git commit -am'
-alias gb='git branch'
-alias gch='git checkout'
-alias gra='git remote add'
-alias grr='git remote rm'
-alias gpl='git pull'
-alias gcl='git clone'
-alias git recap='git log --all --oneline --no-merges --author=devan.rehunathan@sky.uk'
+alias recap='git log --all --oneline --no-merges --author=devan.rehunathan@sky.uk'
 
 # Compact, colorized git log
 alias gl="git log --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
@@ -190,20 +177,12 @@ alias notes='jupyter notebook'
 # Brew Update and Upgrade
 alias brewup='brew update && brew outdated --verbose && brew upgrade && brew cleanup -ns && brew cleanup -s'
 
-alias openconnect='sudo openconnect --user=bskyb_devan.rehunathan https://sslvpn.isp.sky.com'
+# Jenkins
+alias start_jenkins='sudo launchctl load /Library/LaunchDaemons/org.jenkins-ci.plist'
+alias stop_jenkins='sudo launchctl unload /Library/LaunchDaemons/org.jenkins-ci.plist'
 
 # Add timestamps to history
 export HISTTIMEFORMAT="%d/%m/%y %T "
-
-# Create test-commands fifo
-function letstest() {
-    if [ ! -p test-commands ]; then
-        mkfifo test-commands
-    fi   
-    while true; do
-        sh -c "$(cat test-commands)"
-    done
-}
 
 # Virtualenv wrapper
 export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python3
@@ -214,3 +193,6 @@ VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python3
 export DOCKER_HOST=tcp://192.168.59.103:2376
 export DOCKER_CERT_PATH=/Users/dre09/.boot2docker/certs/boot2docker-vm
 export DOCKER_TLS_VERIFY=1
+
+# nsa repo
+export PIP_TRUSTED_HOST=pub.nsa.bskyb.com
