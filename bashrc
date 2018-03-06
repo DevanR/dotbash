@@ -127,6 +127,10 @@ unset LANG
 export LC_ALL=POSIX
 
 # 2.6) Git options
+
+alias gs='git status'
+alias gd='git diff'
+alias gb='git branch'
 alias recap='git log --all --oneline --no-merges --author=devan.rehunathan@sky.uk'
 
 # Compact, colorized git log
@@ -160,6 +164,7 @@ alias bmsprod='pgcli -h 10.246.40.105 -U bmsadmin -d metro'
 
 alias bmsqa='pgcli -h cpbmsqa01.sns.sky.com -U bmsadmin -d metro'
 
+# set search_path to bms, cdn, forecast, inventory, mon, nis, nis_master, peering, public, public_views, rsrm, service, util;
 alias coreprod='pgcli -h  iapprd01.sns.sky.com -U nsa_bms -d core'
 
 alias coreqa='pgcli -h  iapqa01.sns.sky.com -U core_user -d core'
@@ -181,18 +186,22 @@ alias brewup='brew update && brew outdated --verbose && brew upgrade && brew cle
 alias start_jenkins='sudo launchctl load /Library/LaunchDaemons/org.jenkins-ci.plist'
 alias stop_jenkins='sudo launchctl unload /Library/LaunchDaemons/org.jenkins-ci.plist'
 
+# Kill process
+alias skill='sudo kill -9'
+
 # Add timestamps to history
 export HISTTIMEFORMAT="%d/%m/%y %T "
 
-# Virtualenv wrapper
-export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python3
-export WORKON_HOME=~/Envs
-VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python3
-
-# docker-osx-dev
-export DOCKER_HOST=tcp://192.168.59.103:2376
-export DOCKER_CERT_PATH=/Users/dre09/.boot2docker/certs/boot2docker-vm
-export DOCKER_TLS_VERIFY=1
+## Virtualenv wrapper
+#export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python3
+#export WORKON_HOME=~/Envs
+#VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python3
+#source /usr/local/bin/virtualenvwrapper.sh
 
 # nsa repo
 export PIP_TRUSTED_HOST=pub.nsa.bskyb.com
+
+# pyenv and virtualenv
+export PATH="/Users/dre09/.pyenv:$PATH"
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"

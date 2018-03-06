@@ -1,6 +1,6 @@
-## -----------------------
-## -- 1) Import .bashrc --
-## -----------------------
+### -----------------------
+### -- 1) Import .bashrc --
+### -----------------------
 
 # Factor out all repeated profile initialization into .bashrc
 #  - All non-login shell parameters go there
@@ -17,6 +17,7 @@ fi
 #  - Lowest priority first, highest priority last.
 export PATH=$PATH
 export PATH=/usr/local/bin:$PATH
+export PATH=/Applications/Postgres.app/Contents/Versions/latest/bin/:$PATH
 
 if [ -f /opt/local/etc/bash_completion ]; then
     . /opt/local/etc/bash_completion
