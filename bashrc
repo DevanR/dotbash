@@ -105,8 +105,6 @@ alias lld="ls -ld */"
 alias dir='ls --color=auto --format=vertical'
 alias vdir='ls --color=auto --format=long'
 alias m='less'
-alias ..='cd ..'
-alias ...='cd ..;cd ..'
 alias md='mkdir'
 alias c='clear'
 alias du='du -ch --max-depth=1'
@@ -180,7 +178,7 @@ alias tmux='tmux -u'
 alias notes='jupyter notebook'
 
 # Brew Update and Upgrade
-alias brewup='brew update && brew outdated --verbose && brew upgrade && brew cleanup -ns && brew cleanup -s'
+alias brewup='brew update && brew outdated --verbose && brew upgrade && brew cleanup -ns && brew cleanup'
 
 # Jenkins
 alias start_jenkins='sudo launchctl load /Library/LaunchDaemons/org.jenkins-ci.plist'
