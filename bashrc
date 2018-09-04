@@ -32,6 +32,13 @@
 
 # 2.0) From Alias.sh
 
+# CLI -improved (https://remysharp.com/2018/08/23/cli-improved)
+alias cat='bat'
+alias ping='prettyping --nolegend'
+alias preview="fzf --preview 'bat --color \"always\" {}'"
+alias du="ncdu --color dark -rr -x --exclude .git --exclude node_modules"
+alias help='tldr'
+
 #Extract most know archives with one command
 extract () {
     if [ -f $1 ] ; then
@@ -107,7 +114,7 @@ alias vdir='ls --color=auto --format=long'
 alias m='less'
 alias md='mkdir'
 alias c='clear'
-alias du='du -ch --max-depth=1'
+#alias du='du -ch --max-depth=1'
 alias treeacl='tree -A -C -L 2'
 
 # 2.3) Text and editor commands
@@ -121,8 +128,8 @@ export GREP_COLOR='1;31' # green for matches
 # 2.5) sort options
 # Ensures cross-platform sorting behavior of GNU sort.
 # http://www.gnu.org/software/coreutils/faq/coreutils-faq.html#Sort-does-not-sort-in-normal-order_0021
-unset LANG
-export LC_ALL=POSIX
+#unset LANG
+#export LC_ALL=POSIX
 
 # 2.6) Git options
 
