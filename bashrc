@@ -8,7 +8,7 @@
 #    3) .bash_profile imports .bashrc, but not vice versa.
 #    4) .bashrc imports .bashrc_custom, which can be used to override
 #        variables specified here.
-#           
+#
 # When Bash starts, it executes the commands in a variety of different scripts.
 #
 #   1) When Bash is invoked as an interactive login shell, it first reads
@@ -92,7 +92,7 @@ alias wotgobblemem='ps -o time,ppid,pid,nice,pcpu,pmem,user,comm -A | sort -n -k
 
 # Pretty print json
 function ppjson () {
-    if [ "${1}" ]; then cat "${1}" | python -mjson.tool; fi   
+    if [ "${1}" ]; then cat "${1}" | python -mjson.tool; fi
 }
 
 # 2.1) Safety
@@ -119,7 +119,7 @@ alias treeacl='tree -A -C -L 2'
 
 # 2.3) Text and editor commands
 export EDITOR='vim'
-export VISUAL='vim' 
+export VISUAL='vim'
 
 # 2.4) grep options
 export GREP_OPTIONS='--color=auto'
@@ -137,6 +137,7 @@ alias gs='git status'
 alias gd='git diff'
 alias gb='git branch'
 alias recap='git log --all --oneline --no-merges --author=devan.rehunathan@sky.uk'
+alias gwho='git shortlog -s -n'
 
 # Compact, colorized git log
 alias gl="git log --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
@@ -210,3 +211,4 @@ export PIP_TRUSTED_HOST=pub.nsa.bskyb.com
 export PATH="/Users/dre09/.pyenv:$PATH"
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
+
