@@ -198,17 +198,3 @@ alias skill='sudo kill -9'
 # Add timestamps to history
 export HISTTIMEFORMAT="%d/%m/%y %T "
 
-## Virtualenv wrapper
-#export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python3
-#export WORKON_HOME=~/Envs
-#VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python3
-#source /usr/local/bin/virtualenvwrapper.sh
-
-# nsa repo
-export PIP_TRUSTED_HOST=pub.nsa.bskyb.com
-
-# pyenv and virtualenv
-export PATH="/Users/dre09/.pyenv:$PATH"
-eval "$(pyenv init -)"
-eval "$(pyenv virtualenv-init -)"
-
