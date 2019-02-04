@@ -166,31 +166,11 @@ if [ -f $(brew --prefix)/etc/bash_completion ]; then
 . $(brew --prefix)/etc/bash_completion
 fi
 
-alias bmsprod='pgcli -h 10.246.40.105 -U bmsadmin -d metro'
-
-alias bmsqa='pgcli -h cpbmsqa01.sns.sky.com -U bmsadmin -d metro'
-
-# set search_path to bms, cdn, forecast, inventory, mon, nis, nis_master, peering, public, public_views, rsrm, service, util;
-alias coreprod='pgcli -h  iapprd01.sns.sky.com -U nsa_bms -d core'
-
-alias coreqa='pgcli -h  iapqa01.sns.sky.com -U core_user -d core'
-
-alias hubprod='pgcli -h insightandplanning.sns.sky.com -U hub -d hub'
-
-alias hubqa='pgcli -h insightandplanning-qa.sns.sky.com -U hub_qa -d hub_qa'
-
 # tmux prompt bug fix
 alias tmux='tmux -u'
 
-# Jupyter Notebook
-alias notes='jupyter notebook'
-
 # Brew Update and Upgrade
-alias brewup='brew update && brew outdated --verbose && brew upgrade && brew cleanup -ns && brew cleanup'
-
-# Jenkins
-alias start_jenkins='sudo launchctl load /Library/LaunchDaemons/org.jenkins-ci.plist'
-alias stop_jenkins='sudo launchctl unload /Library/LaunchDaemons/org.jenkins-ci.plist'
+alias brewup='brew update && brew outdated --verbose && brew upgrade && brew cleanup'
 
 # Kill process
 alias skill='sudo kill -9'
