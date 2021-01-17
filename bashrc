@@ -61,40 +61,6 @@ extract () {
      fi
 }
 
-#Jump back n directories at a time
-alias ..='cd ..'
-alias ...='cd ../../'
-alias ....='cd ../../../'
-alias .....='cd ../../../../'
-alias ......='cd ../../../../../'
-
-# Show which commands you use the most
-alias freq='cut -f1 -d" " ~/.bash_history | sort | uniq -c | sort -nr | head -n 30'
-
-# Search for process
-alias tm='ps -ef | grep'
-
-# List all folders
-alias lf='ls -Gl | grep ^d' #Only list directories
-alias lsd='ls -Gal | grep ^d' #Only list directories, including hidden ones
-
-# Show hidden files only
-alias l.='ls -d .* --color=auto'
-
-# Copy public key to remote machine (dependency-less)
-function authme() {
-  ssh "$1" 'mkdir -p ~/.ssh && cat >> ~/.ssh/authorized_keys' \
-    < ~/.ssh/id_dsa.pub
-}
-
-# What's gobbling the memory?
-alias wotgobblemem='ps -o time,ppid,pid,nice,pcpu,pmem,user,comm -A | sort -n -k 6 | tail -15'
-
-# Pretty print json
-function ppjson () {
-    if [ "${1}" ]; then cat "${1}" | python -mjson.tool; fi
-}
-
 # 2.1) Safety
 alias rm="rm -i"
 alias mv="mv -i"
@@ -105,6 +71,7 @@ set -o noclobber
 export CLICOLOR=1
 export LSCOLORS=gxBxhxDxfxhxhxhxhxcxcx
 export GREP_OPTIONS='--color=auto'
+alias l.='ls -d .* --color=auto'
 alias ll="ls -alrtF"
 alias la="ls -A"
 alias l="ls -CF"
@@ -114,7 +81,6 @@ alias vdir='ls --color=auto --format=long'
 alias m='less'
 alias md='mkdir'
 alias c='clear'
-#alias du='du -ch --max-depth=1'
 alias treeacl='tree -A -C -L 2'
 
 # 2.3) Text and editor commands
@@ -125,12 +91,6 @@ export VISUAL='vim'
 export GREP_OPTIONS='--color=auto'
 export GREP_COLOR='1;31' # green for matches
 
-# 2.5) sort options
-# Ensures cross-platform sorting behavior of GNU sort.
-# http://www.gnu.org/software/coreutils/faq/coreutils-faq.html#Sort-does-not-sort-in-normal-order_0021
-#unset LANG
-#export LC_ALL=POSIX
-
 # 2.6) Git options
 
 alias gs='git status'
@@ -138,19 +98,13 @@ alias gd='git diff'
 alias gb='git branch'
 alias recap='git log --all --oneline --no-merges --author=devan.rehunathan@sky.uk'
 alias gwho='git shortlog -s -n'
-
-# Compact, colorized git log
 alias gl="git log --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
-
-# Visualise git log (like gitk, in the terminal)
 alias gg='git log --graph --full-history --all --color --pretty=format:"%x1b[31m%h%x09%x1b[32m%d%x1b[0m%x20%s"'
+
 
 ## ------------------------------
 ## -- 3) User-customized code  --
 ## ------------------------------
-
-# Set vi mode as default
-set -o vi
 
 # Automatic tab naming for iTerm tabs
 export PROMPT_COMMAND='echo -ne "\033]0;${USER}@${HOSTNAME%%.*}\007"'
@@ -172,9 +126,18 @@ alias tmux='tmux -u'
 # Brew Update and Upgrade
 alias brewup='brew update && brew outdated --verbose && brew upgrade && brew cleanup'
 
-# Kill process
-alias skill='sudo kill -9'
-
 # Add timestamps to history
 export HISTTIMEFORMAT="%d/%m/%y %T "
 
+# fzf preview
+export FZF_PREVIEW_COMMAND="bat --style=numbers,changes --wrap never --color always {} || cat {} || tree -C {}"
+export FZF_CTRL_T_OPTS="--min-height 30 --preview-window down:60% --preview-window noborder --preview '($FZF_PREVIEW_COMMAND) 2> /dev/null'"
+
+# delete all docker images
+alias rm-docker-images='(docker rmi $(docker images -a -q)'
+
+alias backup-photos='rclone sync /Volumes/SAMSUNG backblaze:photographs-master --exclude-from ~/.rclone/exclude.conf'
+
+alias mount-photos='rclone mount backblaze:photographs-master ~/Downloads/photographs-master_mnt/'
+
+alias serve-photos='rclone serve backblaze:photographs-master'
