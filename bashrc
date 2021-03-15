@@ -136,7 +136,7 @@ export FZF_CTRL_T_OPTS="--min-height 30 --preview-window down:60% --preview-wind
 # delete all docker images
 alias rm-docker-images='(docker rmi $(docker images -a -q)'
 
-alias backup-photos='rclone sync /Volumes/SAMSUNG backblaze:photographs-master --exclude-from ~/.rclone/exclude.conf'
+alias backup-photos='rclone sync /Volumes/SAMSUNG backblaze:photographs-master --exclude-from ~/.rclone/exclude.conf --bwlimit 400k'
 
 alias mount-photos='rclone mount backblaze:photographs-master ~/Downloads/photographs-master_mnt/'
 
