@@ -6,7 +6,7 @@
 #  - These are line by line so that you can kill one without affecting the others.
 #  - Lowest priority first, highest priority last.
 export PATH=$PATH
-#export PATH=/usr/local/bin:$PATH
+export PATH=/usr/local/bin:$PATH
 export PATH=/Applications/Postgres.app/Contents/Versions/latest/bin/:$PATH
 
 
@@ -30,3 +30,11 @@ fi
 
 # ruby
 eval "$(rbenv init -)"
+
+export PYENV_ROOT="$HOME/.pyenv
+command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)
+
+# nvm
+export NVM_DIR=~/.nvm
+source $(brew --prefix nvm)/nvm.sh

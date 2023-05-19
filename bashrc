@@ -33,6 +33,7 @@
 # 2.0) From Alias.sh
 
 # CLI -improved (https://remysharp.com/2018/08/23/cli-improved)
+alias vim='nvim'
 alias cat='bat'
 alias ping='prettyping --nolegend'
 alias preview="fzf --preview 'bat --color \"always\" {}'"
@@ -106,6 +107,9 @@ alias gg='git log --graph --full-history --all --color --pretty=format:"%x1b[31m
 ## -- 3) User-customized code  --
 ## ------------------------------
 
+# Vim mode in iTerm
+set -o vi
+
 # Automatic tab naming for iTerm tabs
 export PROMPT_COMMAND='echo -ne "\033]0;${USER}@${HOSTNAME%%.*}\007"'
 
@@ -136,8 +140,15 @@ export FZF_CTRL_T_OPTS="--min-height 30 --preview-window down:60% --preview-wind
 # delete all docker images
 alias rm-docker-images='(docker rmi $(docker images -a -q)'
 
-alias backup-photos='rclone sync /Volumes/SAMSUNG backblaze:photographs-master --exclude-from ~/.rclone/exclude.conf --bwlimit 400k'
-
+# Backblaze
+alias backup-photos='rclone --transfers 50 sync /Volumes/SAMSUNG backblaze:photographs-master -P -vv --exclude-from ~/.rclone/exclude.conf'
 alias mount-photos='rclone mount backblaze:photographs-master ~/Downloads/photographs-master_mnt/'
-
 alias serve-photos='rclone serve backblaze:photographs-master'
+
+# Pyenv
+export PYENV_ROOT="$HOME/.pyenv"
+command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
+
+# rsync
+alias rync='rsync -axHAWXS --numeric-ids --info=progress2'
